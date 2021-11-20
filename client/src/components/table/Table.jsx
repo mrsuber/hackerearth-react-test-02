@@ -86,7 +86,10 @@ const {
   const handleSave = () =>{
     localStorage.setItem("tableData",tableData_sorted_by_price)
   }
-  
+
+  const handleReset = () =>{
+    localStorage.removeItem("tableData",tableData_sorted_by_price)
+  }
 
   return (
     <>
@@ -136,7 +139,7 @@ const {
      </table>
      <div className="btn container">
      <button onClick={handleSave}>save</button>
-     <button>Reset</button>
+     <button onClick={handleReset}>Reset</button>
      </div>
      </>
   )
