@@ -83,7 +83,13 @@ const {
  } = tableInstance
   // Render the UI for your table
 
+  const handleSave = () =>{
+    localStorage.setItem("tableData",tableData_sorted_by_price)
+  }
+  
+
   return (
+    <>
     <table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
        <thead>
          {headerGroups.map(headerGroup => (
@@ -128,6 +134,11 @@ const {
          })}
        </tbody>
      </table>
+     <div className="btn container">
+     <button onClick={handleSave}>save</button>
+     <button>Reset</button>
+     </div>
+     </>
   )
 }
 
